@@ -31,3 +31,7 @@ item[2].style.color = 'green';
 for(var i =0;i<item.length;i++){
     item[i].style.fontWeight="bold";
 }
+
+//item[4].textContent='hi'
+var LiElement = document.getElementsByTagName('li');
+LiElement[4].textContent='hi'
