@@ -151,11 +151,11 @@ function additem(e){
     li.className = 'list-group-item';
 
     var newItemD = document.getElementById('description').value;
-    var nli = document.createElement('li');
-    nli.className='desc';
-    nli.appendChild(document.createTextNode(newItemD));
+    var p = document.createElement('p');
+    p.className='desc';
+    p.appendChild(document.createTextNode(newItemD));
     li.appendChild(document.createTextNode(newItem));
-    li.appendChild(nli);
+    li.appendChild(p);
 
     var editBtn = document.createElement('button');
     editBtn.className = 'btn btn-secondary btn-sm float-right edit';
@@ -178,19 +178,32 @@ function removeItem(e){
     }
 }
 
+// function filterItems(e){
+//     var text = e.target.value.toLowerCase();
+//     var items = itemList.getElementsByTagName('li');
+    
+//     Array.from(items).forEach(function(item){
+//         var itemName = item.firstChild.textContent;
+//         console.log(itemName)
+//         if(itemName.toLowerCase().indexOf(text)!= -1){
+//             item.style.display = 'block';
+//             //item.style.backgroundColor = 'red';
+//         }
+//         else{
+//             item.style.display = 'none';
+//         }
+//     });
 function filterItems(e){
     var text = e.target.value.toLowerCase();
-    var items = itemList.getElementsByTagName('li');
+    var items = itemList.getElementsByTagName('p');
     
     Array.from(items).forEach(function(item){
         var itemName = item.firstChild.textContent;
-        console.log(itemName)
-        if(itemName.toLowerCase().indexOf(text)!= -1){
-            item.style.display = 'block';
-            //item.style.backgroundColor = 'red';
+        if(itemName.toLowerCase().indexOf(text)!= -1 || item.parentElement.textContent.toLowerCase().indexOf(text)!= -1){
+            item.parentElement.style.display = 'block';
         }
         else{
-            item.style.display = 'none';
+            item.parentElement.style.display = 'none';
         }
     });
 
