@@ -61,12 +61,77 @@
 
 // var titles = document.querySelectorAll('.title');
 // console.log(title)
+// var item = document.querySelectorAll('li');
+// item[1].style.color = 'green';
+// var odd = document.querySelectorAll('li:nth-child(odd');
+// for(var i=0;i<odd.length;i++){
+//     odd[i].style.backgroundColor='green';
+// }
+
+//TraversingDOM
+
+var itemList = document.querySelector('#items');
+// console.log(itemList.parentNode);
+// itemList.parentNode.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentNode.parentNode.parentNode);
+
+// console.log(itemList.parentElement);
+// itemList.parentElement.style.backgroundColor = '#f4f4f4';
+// console.log(itemList.parentElement.parentElement.parentElement);
+
+//console.log(itemList.childNodes)
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundColor = 'Orange';
+
+//FIrstChild
+// console.log(itemList.firstChild);
+// console.log(itemList.firstElementChild);
+// itemList.firstElementChild.textContent = 'Hello 1'
+
+// console.log(itemList.lastChild);
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent = 'Hello 4';
+
+//Siblings
+// console.log(itemList.nextSibling);
+// console.log(itemList.nextElementSibling);
+
+//PreviousSibling
+// console.log(itemList.previousSibling);
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color='green';
+
+//createElement
+
+//create a Div
+var newDiv = document.createElement('div');
+//add class
+newDiv.className='helloDiv';
+//add id
+newDiv.id='helloId';
+//add attr
+newDiv.setAttribute('title','helloAttr');
+var newDivText = document.createTextNode('Hello');
+//add text to div
+newDiv.appendChild(newDivText);
+console.log(newDiv);
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+newDiv.style.fontSize = '20px';
+container.insertBefore(newDiv,h1);
 
 
-var item = document.querySelectorAll('li');
-item[1].style.color = 'green';
-var odd = document.querySelectorAll('li:nth-child(odd');
-for(var i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor='green';
-}
+//new LI
+var newLi = document.createElement('li');
+newLi.className='list-group-item';
+var newText = document.createTextNode('Hello from dom.js');
+newLi.appendChild(newText);
+var space = document.querySelector('ul');
+var li = document.querySelector('ul li');
+
+space.insertBefore(newLi,li);
+
+
+
 
