@@ -48,7 +48,7 @@
         
         var i = 0;
         function additem(e){
-            //e.preventDefault();
+            e.preventDefault();
             var nameIN = document.getElementById('name').value;
             var emailIN = document.getElementById('email').value;
             // localStorage.setItem('Name',name);
@@ -63,20 +63,14 @@
    
             var ul = document.getElementById('lStrorage');
             var newLi = document.createElement('li');
-            // let mail = localStorage.key(i);
-            // let myobj_deserialized = JSON.parse(localStorage.getItem(mail));
-            // var newText = document.createTextNode(' Name : '+myobj_deserialized.name+" Email : "+myobj_deserialized.email);
-            // newLi.append(newText);
-            // ul.appendChild(newLi);
-            // i++;
+            let mail = localStorage.key(i);
+            let myobj_deserialized = JSON.parse(localStorage.getItem(mail));
+            var newText = document.createTextNode(' Name : '+myobj_deserialized.name+" Email : "+myobj_deserialized.email);
+            newLi.append(newText);
+            ul.appendChild(newLi);
+            i++;
 
-            //for (var i = 0; i < localStorage.length; i++) { 
-                let mail = localStorage.key(i);
-                let myobj_deserialized = JSON.parse(localStorage.getItem(mail));
-                var newText = document.createTextNode(' Name : '+myobj_deserialized.name+" Email : "+myobj_deserialized.email);
-                ul.insertAdjacentHTML('beforeend', '<li>'+newText.textContent+'</li>'); 
-                i++;
-            //}
+            
             
         }
         window.addEventListener('DOMContentLoaded', (event) => {
