@@ -82,7 +82,7 @@
 
             const childHTML = `<li id=${myObj.email}> ${myobj_deserialized .name} - ${myobj_deserialized .email}
                                         <button onclick=deleteUser('${myobj_deserialized.email}')> Delete</button>
-                                        <button onclick=editUser('${myobj_deserialized.email}')> Edit </button>
+                                        <button onclick=editUser('${myobj_deserialized.email}','${myobj_deserialized.name}')> Edit </button>
                                      </li>`
 
             ul.innerHTML = ul.innerHTML + childHTML;
